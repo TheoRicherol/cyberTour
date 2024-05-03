@@ -1,0 +1,712 @@
+@import "../foundation/reset"
+@import "../foundation/colors"
+@import "../foundation/fonts"
+@import "../foundation/mixins"
+
+#fixed-bg
+  position: fixed
+  z-index: -1000
+  top: 0
+  width: 100vw
+  height: 100dvh
+  overflow: hidden
+  filter: brightness(60%)
+
+  img
+    @include devices(desktop-s, desktop-m, desktop-l, desktop-xl, tablet-landscape)
+      object-fit: cover
+      width: 100%
+    @include devices(mobile-landscape, mobile-portrait, tablet-portrait)
+      object-fit: cover
+      height: 100dvh
+
+.big-graphic-element
+  width: 100vw
+  align-self: center
+  overflow: hidden
+
+  img
+    width: 100%
+
+
+header
+  right: 0
+  display: flex
+  margin-bottom: 2vh
+  overflow: auto
+  transition: all 250ms ease-in-out
+  @include devices(mobile-landscape, mobile-portrait, tablet-portrait)
+    position: fixed
+    z-index: 1000
+    width: 80vw
+    height: 100vh
+    right: 0
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl, tablet-landscape)
+    width: 100vw
+    height: 10vh
+
+  #nav
+    width: 100vw
+    height: 10vh
+
+    top: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 1000
+    transition: all 1s ease-in-out
+    @include devices(desktop-s, desktop-m, desktop-l, desktop-xl, tablet-landscape)
+      position: fixed
+      background-position: top
+      background-size: cover
+      background-repeat: no-repeat
+    @include devices(mobile-landscape, mobile-portrait, tablet-portrait)
+      background-image: $principalColor
+      height: 100vh
+      width: 100%
+      right: 0
+      flex-direction: column
+      gap: 5vh
+
+
+    .footer-mobile
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      gap: 1vh
+      margin-bottom: 2vh
+
+    .nav-items
+      display: flex
+      flex-direction: row
+      justify-content: space-evenly
+      align-items: center
+      width: 80%
+
+      @include devices(mobile-landscape, mobile-portrait, tablet-portrait)
+        flex-direction: column
+        justify-content: center
+        height: auto
+        gap: 2vh
+
+      li
+        display: flex
+
+        img
+          width: 40%
+          object-fit: contain
+          @include devices(mobile-landscape, mobile-portrait, tablet-portrait)
+            width: 20vw
+          @include devices(desktop-s)
+            width: 20%
+
+    .item-logo
+      @include devices(mobile-landscape, mobile-portrait, tablet-portrait)
+        width: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+
+
+main
+  section
+    position: relative
+
+    .section-title
+      padding: 3vh
+      gap: 3vh
+      align-self: flex-start
+
+
+  #whatis
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    width: 100vw
+    @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+      height: 90vh
+    @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+      height: 180vh
+
+    .section-container
+      @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+        margin-bottom: 5vh
+
+      .logo
+        width: 20vh
+        margin-bottom: 10vh
+
+    .bricks
+      width: 70%
+      margin: auto
+      justify-content: center
+      padding: 3vh 0
+      gap: 5vh
+      @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+        width: 100%
+        align-items: center
+
+      .brick
+        display: flex
+        flex-direction: column
+        gap: 3vh
+        @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+          align-items: center
+
+        .brick-title
+          display: flex
+          flex-direction: row
+          gap: 3vh
+          align-items: center
+
+        .brick-content
+          width: 80%
+
+
+#steps
+  width: 100vw
+  display: flex
+
+  .section-container
+    width: 100%
+
+    .content
+      width: 100%
+
+      .steps-container
+        gap: 3vh
+
+        .step
+          gap: 6vh
+          width: 30%
+          @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+            width: 100%
+            align-items: center
+
+          .big-dash
+            height: 2vh
+            width: 100%
+            @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+              height: 4vh
+              width: 80%
+              margin: auto
+
+          .cards
+            gap: 3vh
+
+            .step-card
+              //TODO:Flèche des évènements passés
+              width: 100%
+              margin: 5vh 0
+
+              .step-infos
+                flex-direction: column
+                gap: 3vh
+                width: 100%
+                @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+                  align-items: center
+                  margin: auto
+
+
+#speakers
+  background: white
+
+  .big-graphic-element
+    img
+      min-height: 100vh
+      width: auto
+      object-position: left top
+
+  .section-container
+    .section-title
+      z-index: 1
+
+    .content
+      z-index: 1
+      align-items: center
+      justify-content: space-around
+
+      .logo
+        width: 20%
+        z-index: 1
+        @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+          width: 50%
+
+      .speakers-container
+        flex-wrap: wrap
+        width: 60%
+        gap: 1vh
+        margin: 10vh 0 15vh 0
+        @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+          width: 80%
+          gap: 2vh
+
+        .speaker
+          width: 30%
+          margin-bottom: 1vh
+          @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+            width: 100%
+            margin: auto
+
+
+#team
+  .section-container
+    .team-container
+      z-index: 1
+      gap: 3vh
+      flex-wrap: wrap
+      justify-content: center
+      @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+        gap: 5vh
+
+      .team-card
+        width: 20%
+        margin: 3vh
+        @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+          width: 80%
+          margin: 0
+
+        .team-member-infos
+          @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+            width: 80%
+            text-align: center
+            gap: 2vh
+
+          .contact
+            a
+              font-family: "Montserrat", sans-serif
+              font-weight: 400
+              color: black
+              margin-left: 10px
+
+
+#partnership
+  width: 100vw
+  padding: 10vh 0
+
+  .content
+    width: 60%
+    gap: 3vh
+    @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+      width: 80%
+
+
+.cards-images
+  padding: 5vh 0
+  position: relative
+  height: 20vh
+  width: 20vh
+  margin: auto
+  transition: all 1s ease
+
+  &:hover
+    img
+      rotate: 0deg
+
+    .bg-img-blue-gradient
+      rotate: 0deg
+
+  .bg-img-blue-gradient, img
+    transition: all 250ms ease
+    position: absolute
+    height: 20vh
+    width: 20vh
+    aspect-ratio: 1/1
+    border-radius: 20px
+
+  .bg-img-blue-gradient-rotated
+    rotate: 6deg
+
+  img
+    object-fit: cover
+    object-position: top
+
+  .img-rotated
+    rotate: -6deg
+
+
+.button
+  padding: 1.5vh
+  border-radius: 16px
+  display: flex
+  align-items: center
+  justify-content: center
+  color: white
+  border: 2px solid white
+  background: $principalColor
+  @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+//margin: auto
+//&:hover
+//  border: 2px solid #36AD93
+//  background: white
+//  text-decoration: underline
+//  max-width: max-content
+//  background: $principalColor
+//  background-clip: text
+//  -webkit-background-clip: text
+//  -webkit-text-fill-color: transparent
+
+.disabled
+  background: gray
+  color: white
+//&:hover
+//  border: none
+//  background: gray
+//  text-decoration: none
+//  max-width: max-content
+//  background: $principalColor
+//  background-clip: text
+//  -webkit-background-clip: text
+//  -webkit-text-fill-color: transparent
+
+footer
+  width: 100vw
+  height: 6vh
+  background: black
+
+  ul
+    height: 100%
+    gap: 5vh
+
+
+.bg-white
+  background: white
+
+.bg-blue-gradient
+  background: $principalColor
+
+
+.bg-grey
+  background: $secondaryColor
+
+.bg-grey-light
+  background: rgba($secondaryColor, .1)
+
+.bg-transparent
+  background: transparent
+
+.big-graphic-element
+  position: absolute
+
+.col-mobile
+  @include devices(mobile-portrait, mobile-ladscape, tablet-portrait)
+    display: flex
+    flex-direction: column
+
+.row-mobile
+  @include devices(mobile-portrait, mobile-ladscape, tablet-portrait)
+    display: flex
+    flex-direction: row
+
+.col-desktop
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl, tablet-landscape)
+    display: flex
+    flex-direction: column
+
+.row-desktop
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl, tablet-landscape)
+    display: flex
+    flex-direction: row
+
+.center-mobile
+  @include devices(mobile-portrait, mobile-ladscape, tablet-portrait)
+    align-items: center
+    justify-content: center
+
+
+.center-desktop
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl, tablet-landscape)
+    align-items: center
+    justify-content: center
+
+.mobile-display-none
+  @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+    display: none !important
+
+.desktop-display-none
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl, tablet-landscape)
+    display: none !important
+
+
+.closed
+  @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+    width: 0
+    height: 10vh
+
+.line
+  z-index: 4000
+  position: absolute
+  width: 5vw
+  height: 3px
+  background: white
+  transition: all 250ms ease-in-out
+
+.line1-open
+  top: 2vh
+  right: 2vh
+
+.line2-open
+  top: 3vh
+  right: 2vh
+
+.line1-close
+  top: 4vh
+  right: 2vh
+  transform: rotate(45deg)
+
+.line2-close
+  top: 4vh
+  right: 2vh
+  transform: rotate(-45deg)
+
+.background-embed-video-container
+  height: 100vh
+  width: 100vw
+  overflow: hidden
+  padding: 0
+  position: fixed
+  top: 0
+  left: 0
+
+  iframe
+    filter: brightness(0.5)
+    box-sizing: border-box
+    height: 56.25vw
+    left: 50%
+    min-height: 100%
+    min-width: 100%
+    transform: translate(-50%, -50%)
+    position: absolute
+    top: 50%
+    width: 177.77777778vh
+
+
+// Style for last event
+//TODO: A separer si besoin
+
+#reTOUR
+  .section-container
+    width: 100vw
+    height: 70vh
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+
+    .logo
+      width: 15vh
+
+    .newspaper-display
+      width: 100%
+      height: 40vh
+      position: relative
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: center
+      @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+        flex-direction: row-reverse
+
+      .newspaper
+        max-height: 100%
+        @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+          position: absolute
+        @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+          margin: 0 -3vw
+
+        img
+          @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+            display: block
+            max-height: 100%
+            object-fit: contain
+
+#itw
+  h1
+    margin: 3vh
+    text-transform: uppercase
+
+  .section-container
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 3vh
+    width: 100vw
+
+    .itw-cards
+      flex-wrap: wrap
+      gap: 3vh
+      @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-auto-rows: minmax(100px, auto)
+        margin-bottom: 5vh
+
+      .itw-card
+        display: flex
+        flex-direction: column
+        gap: 3vh
+        @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+          .itw-card-top
+            .itw-embed-video-container
+
+            .itw-people-presentation
+              h1, p
+                margin: 3vh
+                max-width: max-content
+                background: $principalColor
+                background-clip: text
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+
+              h1
+                font-size: 2rem
+
+        .know-more
+          display: flex
+
+          .button
+            box-sizing: border-box
+            width: 50%
+            transition: all 500ms ease-in-out, border 0s
+
+          .kn-infos
+            overflow: hidden
+            max-height: 3000px
+            transition: all 500ms ease-in-out
+            width: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+              display: none
+
+            .text-container
+              width: 80%
+              margin: 3vh 0
+
+              p
+                margin-bottom: 3vh
+
+.kn-closed
+  @include devices(mobile-landscapt, mobile-portrait, tablet-portrait)
+    max-height: 0 !important
+    width: 50% !important
+    position: static
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+
+
+.not-rounded
+  border-radius: 0 !important
+  border: none !important
+  width: 100% !important
+
+.desktop-fixed-know-more
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+    position: fixed
+    z-index: 2000
+    top: 0
+    left: 0
+    width: 100%
+    transform: translateY(25%)
+    height: max-content
+
+
+.itw-card-container
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+    transition: all 1s ease-in-out
+
+.itw-card-container-opened
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 2000
+    background: rgba(0, 0, 0, 0.5)
+    .itw-card-modal
+      transition: all 250s ease-in-out, transform 0s
+      position: fixed
+      width: 60% !important
+      height: 60vh !important
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      overflow-y: scroll
+      border-radius: 16px
+      margin: auto
+      background: $principalColor
+
+      .itw-card-top
+        flex-direction: column-reverse !important
+
+        .itw-people-presentation
+          h1, p
+            color: white !important
+            max-width: unset !important
+            background: unset !important
+            background-clip: unset !important
+            -webkit-background-clip: unset !important
+            -webkit-text-fill-color: unset !important
+            margin: 3vh
+
+          p
+            font-weight: 600
+
+      .kn-infos
+        display: flex !important
+
+      .kn-handler
+        position: absolute
+        right: 1px
+        top: 1px
+        background: unset !important
+        border: none !important
+        width: max-content !important
+
+      .itw-embed-video-container
+        margin: 3vh
+
+.itw-embed-video-container
+  position: relative
+  padding-bottom: 56.25%
+  padding-top: 30px
+  overflow: hidden
+  margin-bottom: 50px
+  width: 100%
+  height: 100%
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  iframe
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+
+.itw-image-container
+  position: relative
+  padding-top: 15px
+  overflow: hidden
+  margin-bottom: 65px
+  width: 100%
+  height: 100%
+  img
+    width: 100%
+
+
+.no-scroll
+  -ms-overflow-style: none
+  /* IE and Edge */
+  scrollbar-width: thin
+  /* Firefox */
+  scrollbar-base-color: transparent
+
+.no-scroll::-webkit-scrollbar
+//display: none /* Chrome, Safari and Opera */
+
+
+.no-margin-desktop
+  @include devices(desktop-s, desktop-m, desktop-l, desktop-xl)
+    margin: 0 !important

@@ -1,0 +1,23 @@
+@mixin devices($devices...)
+  @each $device in $devices
+    @if $device == mobile-portrait
+      @media only screen and (min-device-width: 319px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)
+        @content
+    @else if $device == mobile-landscape
+      @media only screen and (min-device-width: 319px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)
+        @content
+    @else if $device == tablet-portrait
+      @media only screen and (min-width: 600px) and (max-width: 1024px) and (min-device-width: 481px) and (max-device-width: 1280px) and (orientation: portrait)
+        @content
+    @else if $device == tablet-landscape
+      @media only screen and (min-height: 600px) and (max-height: 1024px) and (min-device-width: 481px) and (max-device-width: 1280px) and (orientation: landscape)
+        @content
+    @else if $device == desktop-s
+      @media only screen and (min-width: 1025px) and (max-width: 1366px) and (min-device-width: 1366px)
+        @content
+    @else if $device == desktop-m
+      @media only screen and (min-width: 1367px) and (max-width: 1920px)
+        @content
+    @else if $device == desktop-xl
+      @media only screen and (min-width: 1921px)
+        @content

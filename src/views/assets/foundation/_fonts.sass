@@ -1,0 +1,118 @@
+@import "mixins"
+@import "colors"
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+h1
+  font-family: "Montserrat", sans-serif
+  font-weight: 900
+  font-size: 3rem
+  @include devices(mobile-portrait, mobile-landscape, tablet-portait)
+    font-size: 1.5rem
+    text-align: center
+
+h2
+  font-family: "Montserrat", sans-serif
+  font-weight: 900
+  font-size: 3rem
+  @include devices(mobile-portrait, mobile-landscape, tablet-portait)
+    font-size: 2rem
+    text-align: center
+
+h3
+  font-family: "Montserrat", sans-serif
+  font-weight: 900
+  font-size: 1.2rem
+  @include devices(mobile-portrait, mobile-landscape, tablet-portait)
+    text-align: center
+
+h4
+  font-family: "Montserrat", sans-serif
+  font-weight: 900
+  font-size: 1rem
+  @include devices(mobile-portrait, mobile-landscape, tablet-portait)
+    text-align: center
+    margin: auto
+
+
+p
+  font-family: "Montserrat", sans-serif
+  font-weight: 400
+  font-size: 1rem
+  line-height: 140%
+  @include devices(mobile-portrait, mobile-landscape, tablet-portait)
+    text-align: center
+  strong
+    font-family: "Montserrat", sans-serif
+    font-weight: 600
+    font-size: 1rem
+
+ul
+  overflow: auto
+
+li
+
+  list-style-type: none
+  font-family: "Montserrat", sans-serif
+  font-weight: 600
+  font-size: 1rem
+  color: white
+  a
+    color: white
+    text-decoration: none
+    transition: all 250ms ease
+
+a
+  text-align: center
+
+.button
+  font-family: "Montserrat", sans-serif
+  font-weight: 600
+  font-size: 1rem
+  color: white
+  text-decoration: none
+  @include devices(mobile-portrait, mobile-landscape, tablet-portait)
+    text-align: center
+
+
+.blue-gradient-text-mobile
+  @include devices(mobile-portrait, mobile-landscape, tablet-portrait)
+    max-width: max-content
+    background: $principalColor
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.blue-gradient-text-desktop
+  @include devices(desktop-s, desktop-m, dsktop-l, desktop-xl)
+    max-width: max-content
+    background: $principalColor
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.white-text
+  color: white
+
+.black-text
+  color: black
+
+.side-section-title-text
+  font-family: "Montserrat", sans-serif
+  font-weight: 900
+  text-transform: uppercase
+  letter-spacing: 2.5rem
+  text-align: center
+  font-size: 5rem
+  opacity: .5
+  writing-mode: vertical-lr
+  rotate: -180deg
+  transform-origin: center
+  margin: 3vh
+  @include devices(mobile-portrait, mobile-landscape, tablet-portait)
+    display: none
+
+.center-text
+  text-align: center
+
+
+.ultra
+  text-transform: uppercase

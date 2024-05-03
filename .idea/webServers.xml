@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="446f99a8-211c-4f54-b1dc-e246cab0286b" name="CyberTour" url="http://ftp.cluster029.hosting.ovh.net">
+        <fileTransfer rootFolder="/www" host="ftp.cluster029.hosting.ovh.net" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="d381d04f-a121-4b44-8147-abad55173673" name="CyberTourdev" url="http://ftp.cluster028.hosting.ovh.net">
+        <fileTransfer rootFolder="/www/cybertour" host="ftp.cluster028.hosting.ovh.net" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
